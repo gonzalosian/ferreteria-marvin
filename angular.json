@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "ofredi"
+  "defaultProject": "ofredi",
+  "cli": {
+    "analytics": false
+  }
 }
