@@ -1,24 +1,46 @@
-<form>
+<form id="loginform" 
+      autocomplete="off"
+      [formGroup]="loginForm"
+      (ngSubmit)="login()">
     <!-- <img class="mb-4" src="" alt="" width="72" height="57"> -->
     <h1 class="h3 mb-3 fw-normal">Por favor, loguearse</h1>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" 
+                class="form-control" 
+                id="exampleInputEmail1" 
+                aria-describedby="emailHelp"
+                formControlName="email">
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" 
+                class="form-control" 
+                id="exampleInputPassword1"
+                formControlName="password">
     </div>
     <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+        <input type="checkbox" 
+                class="form-check-input" 
+                id="checkbox-signup"
+                formControlName="remember">
+        <label class="form-check-label" 
+                for="checkbox-signup">Recordarme</label>
     </div>
+
     <div class="mb-3">
         <button type="submit" class="btn btn-primary btn-lg w-100">Ingresar</button>
     </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 mb-4 text-center" id="google-btn">
+            <div id="my-signin2"></div>
+        </div>
+    </div>
+
     <div class="mb-3 text-center">
         <label class="text-center">¿No tenés una cuenta? &nbsp;
-            <a routerlink="/register" href="/register">Registrarse</a>
+            <a routerlink="/register" >Registrarse</a>
         </label>
     </div>
 </form>
