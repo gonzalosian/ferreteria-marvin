@@ -7,14 +7,18 @@
     </div>
 </div>
 
+<!-- PRODUCTOS DE OFERTA -->
+
 <h5 class="card-title">Ofertas</h5>
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
     <div class="col">
     <div class="card">
         <img src="../../../../assets/img/curso1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h6 class="card-title"> Ahora $1500 &nbsp; <span class="tachado"> $1200 </span> </h6>
+            <!-- <p> Ahora $1500 &nbsp; <span class="tachado"> $1200 </span> </p> -->
         </div>
     </div>
     </div>
@@ -47,18 +51,32 @@
     </div>
 </div>
 
+<!-- PRODUCTOS -->
 
+<h5 class="card-title">Productos Destacados</h5>
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+    <div class="col" *ngFor="let producto of productos">
+        <div class="card" >
+            <img [src]="producto.img | imagen:'productos' " class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> {{ producto.nombre }} </h5>
+                <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reseñas Google -->
 <p>
-    <button class="btn btn-primary" 
+    <button class="btn btn-primary " 
             type="button" 
             data-bs-toggle="collapse" 
             data-bs-target="#collapseExample" 
             aria-expanded="false" 
-            aria-controls="collapseExample">
-    Ver reseñas de Google
+            aria-controls="collapseExample"> Ver reseñas de Google
     </button>
 </p>
-<div class="collapse" id="collapseExample">
+<div class="collapse" id="collapseExample" >
     <div class="card card-body">
 
         <h5 class="card-title">Reseñas de Google</h5>
@@ -67,6 +85,13 @@
                 <img src="../../../assets/img/curso2.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <div>
+                        <span class="mdi mdi-star"></span> 
+                        <span class="mdi mdi-star"></span> 
+                        <span class="mdi mdi-star"></span> 
+                        <span class="mdi mdi-star"></span> 
+                        <span class="mdi mdi-star"></span> 
+                    </div>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </div>
                 <div class="card-footer">
@@ -116,6 +141,6 @@
         </div>
         
     </div>
+
+    
 </div>
-
-

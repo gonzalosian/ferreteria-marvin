@@ -20,7 +20,7 @@ export class BreadcrumbsComponent implements OnDestroy {
                         .subscribe( ({titulo}) => {
                           this.titulo = titulo;
                           // console.log(titulo);                          
-                          document.title = `AdminPro - ${ titulo }`;
+                          document.title = `Marvin - ${ titulo }`;
                         } )
   }
   

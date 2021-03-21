@@ -17,6 +17,9 @@ import { OfertasComponent } from './mantenimientos/ofertas/ofertas.component';
 import { ProductosComponent } from './mantenimientos/productos/productos.component';
 import { ProveedoresComponent } from './mantenimientos/proveedores/proveedores.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { ResenasComponent } from './mantenimientos/resenas/resenas.component';
+import { RubrosComponent } from './mantenimientos/rubros/rubros.component';
+import { ProductoComponent } from './mantenimientos/productos/producto.component';
 
 
 @NgModule({
@@ -26,9 +29,10 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
     NosotrosComponent,
     PagesComponent,
     ProductosComponent,
+    ProductoComponent,
     OfertasComponent,
     UsuariosComponent, 
-    ProveedoresComponent, 
+    ProveedoresComponent, ResenasComponent, RubrosComponent, 
   ],
   exports: [
     DashboardComponent,

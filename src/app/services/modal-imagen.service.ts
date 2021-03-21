@@ -9,7 +9,7 @@ const base_url = environment.base_url;
 export class ModalImagenService {
 
   private _ocultrarModal: boolean = true;
-  public tipo: 'usuarios'|'medicos'|'hospitales'|'noticias';
+  public tipo: 'usuarios'|'productos'|'resenas'|'rubros'|'noticias';
   public id: string;
   public img: string;
   // emitiremos un valor cuando la imagen cambie
@@ -20,7 +20,7 @@ export class ModalImagenService {
   }
 
   abrirModal(
-    tipo: 'usuarios'|'medicos'|'hospitales'|'noticias',
+    tipo: 'usuarios'|'productos'|'resenas'|'rubros'|'noticias',
     id: string,
     img: string = 'no-img')
   {

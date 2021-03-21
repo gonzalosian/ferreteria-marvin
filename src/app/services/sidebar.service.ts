@@ -10,9 +10,9 @@ export class SidebarService {
       titulo: 'Dashboard',
       icono: 'mdi mdi-gauge',
       submenu: [
-        { titulo: 'Dashboard', icono: 'mdi mdi-gauge', url: '/' },
+        { titulo: 'Inicio', icono: 'mdi mdi-gauge', url: '/' },
         { titulo: 'Nosotros', icono: 'mdi mdi-account-group', url: 'nosotros' },
-        { titulo: 'Contactenos', icono: 'mdi mdi-cellphone-message', url: 'contactenos' },
+        { titulo: 'Contáctenos', icono: 'mdi mdi-cellphone-message', url: 'contactenos' },
       ]
     },
     {
@@ -23,6 +23,8 @@ export class SidebarService {
         { titulo: 'Productos', icono: 'mdi mdi-shape', url: 'productos' },
         { titulo: 'Proveedores', icono: 'mdi mdi-human-baby-changing-table', url: 'proveedores' },
         { titulo: 'Usuarios', icono: 'mdi mdi-badge-account-horizontal-outline', url: 'usuarios' },
+        { titulo: 'Reseñas', icono: 'mdi mdi-script-outline', url: 'resenas' },
+        { titulo: 'Rubros', icono: 'mdi mdi-rhombus-split-outline', url: 'rubros' },
       ]
     }
   ];

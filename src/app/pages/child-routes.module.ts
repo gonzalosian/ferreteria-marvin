@@ -9,20 +9,26 @@ import { OfertasComponent } from './mantenimientos/ofertas/ofertas.component';
 import { ProductosComponent } from './mantenimientos/productos/productos.component';
 import { ProveedoresComponent } from './mantenimientos/proveedores/proveedores.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { ResenasComponent } from './mantenimientos/resenas/resenas.component';
+import { RubrosComponent } from './mantenimientos/rubros/rubros.component';
+import { ProductoComponent } from './mantenimientos/productos/producto.component';
 
 
 const childRoutes: Routes = [
     
     // Rutas públicas
-    { path: '', component: DashboardComponent, data: {titulo: 'Dashboard'} },
+    { path: '', component: DashboardComponent, data: {titulo: 'Inicio'} },
     { path: 'nosotros', component: NosotrosComponent, data: {titulo: 'Nosotros'} },
-    { path: 'contactenos', component: ContactenosComponent, data: {titulo: 'Contactenos'} },
+    { path: 'contactenos', component: ContactenosComponent, data: {titulo: 'Contáctenos'} },
     
     // Rutas protegidas (Mantenimiento)
-    { path: 'ofertas', component: OfertasComponent, data: {titulo: 'Ofertas'} },
-    { path: 'productos', component: ProductosComponent, data: {titulo: 'Productos'} },
-    { path: 'proveedores', component: ProveedoresComponent, data: {titulo: 'Proveedores'} },
-    { path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Usuarios'} },
+    { path: 'ofertas', component: OfertasComponent, data: {titulo: 'Mantenimiento de Ofertas'} },
+    { path: 'productos', component: ProductosComponent, data: {titulo: 'Mantenimiento de Productos'} },
+    { path: 'producto/:id', component: ProductoComponent, data: { titulo: 'Mantenimiento de Producto' } },
+    { path: 'proveedores', component: ProveedoresComponent, data: {titulo: 'Mantenimiento de Proveedores'} },
+    { path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantenimiento de Usuarios'} },
+    { path: 'resenas', component: ResenasComponent, data: {titulo: 'Mantenimiento de Reseñas'} },
+    { path: 'rubros', component: RubrosComponent, data: {titulo: 'Mantenimiento de Rubros'} },
 
 ];
 

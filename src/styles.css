@@ -60,3 +60,7 @@
 .oculto {
     display: none;
 }
+
+.tachado {
+    text-decoration: line-through;
+}

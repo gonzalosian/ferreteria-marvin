@@ -6,9 +6,9 @@ import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment'
 
 import { Usuario } from '../models/usuario.model';
-// import { Hospital } from '../models/hospital.model';
-// import { Medico } from '../models/medico.model';
 // import { Noticia } from '../models/noticia.model';
+import { Producto } from '../models/producto.model';
+import { Rubro } from '../models/rubro.model';
 
 const base_url = environment.base_url;
 const tipo = [];
@@ -43,13 +43,13 @@ export class BusquedasService {
     )
   }
 
-  // private transformarHospitales( resultados: any[] ):Hospital[] {
-  //   return resultados;
-  // }
+  private transformarProductos( resultados: any[] ):Producto[] {
+    return resultados;
+  }
 
-  // private transformarMedicos( resultados: any[] ):Medico[] {
-  //   return resultados;
-  // }
+  private transformarRubros( resultados: any[] ):Rubro[] {
+    return resultados;
+  }
 
   // private transformarNoticias( resultados: any[] ):Noticia[] {
   //   return resultados;
@@ -64,7 +64,7 @@ export class BusquedasService {
 
 
   buscar( 
-    tipo: 'usuarios'|'medicos'|'hospitales'|'noticias',
+    tipo: 'usuarios'|'productos'|'rubros'|'noticias',
     termino: string ) {
     // http://localhost:3005/api/todo/coleccion/usuarios/al
     const url = `${ base_url }/todo/coleccion/${ tipo }/${ termino }`;
@@ -76,10 +76,10 @@ export class BusquedasService {
           switch (tipo) {
             case 'usuarios':
               return this.transformarUsuarios( resp.resultado );
-            // case 'hospitales':
-            //   return this.transformarHospitales( resp.resultado );
-            // case 'medicos':
-            //   return this.transformarMedicos( resp.resultado );
+            case 'productos':
+              return this.transformarProductos( resp.resultado );
+            case 'rubros':
+              return this.transformarRubros( resp.resultado );
             // case 'noticias':
             //   return this.transformarNoticias( resp.resultado );
           
