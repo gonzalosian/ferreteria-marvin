@@ -20,6 +20,8 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
 import { ResenasComponent } from './mantenimientos/resenas/resenas.component';
 import { RubrosComponent } from './mantenimientos/rubros/rubros.component';
 import { ProductoComponent } from './mantenimientos/productos/producto.component';
+import { ResenaComponent } from './mantenimientos/resenas/resena.component';
+import { VerResenaComponent } from './mantenimientos/resenas/ver-resena.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { ProductoComponent } from './mantenimientos/productos/producto.component
     ProductoComponent,
     OfertasComponent,
     UsuariosComponent, 
-    ProveedoresComponent, ResenasComponent, RubrosComponent, 
+    ProveedoresComponent, 
+    ResenasComponent, 
+    RubrosComponent, ResenaComponent, VerResenaComponent, 
   ],
   exports: [
     DashboardComponent,

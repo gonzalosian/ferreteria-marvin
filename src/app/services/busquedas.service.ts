@@ -9,6 +9,7 @@ import { Usuario } from '../models/usuario.model';
 // import { Noticia } from '../models/noticia.model';
 import { Producto } from '../models/producto.model';
 import { Rubro } from '../models/rubro.model';
+import { Resena } from '../models/resena.model';
 
 const base_url = environment.base_url;
 const tipo = [];
@@ -51,6 +52,10 @@ export class BusquedasService {
     return resultados;
   }
 
+  private transformarResenas( resultados: any[] ):Resena[] {
+    return resultados;
+  }
+
   // private transformarNoticias( resultados: any[] ):Noticia[] {
   //   return resultados;
   // }
@@ -64,7 +69,7 @@ export class BusquedasService {
 
 
   buscar( 
-    tipo: 'usuarios'|'productos'|'rubros'|'noticias',
+    tipo: 'usuarios'|'productos'|'rubros'|'noticias'|'resenas',
     termino: string ) {
     // http://localhost:3005/api/todo/coleccion/usuarios/al
     const url = `${ base_url }/todo/coleccion/${ tipo }/${ termino }`;
@@ -80,6 +85,8 @@ export class BusquedasService {
               return this.transformarProductos( resp.resultado );
             case 'rubros':
               return this.transformarRubros( resp.resultado );
+            case 'resenas':
+              return this.transformarResenas( resp.resultado );
             // case 'noticias':
             //   return this.transformarNoticias( resp.resultado );
           

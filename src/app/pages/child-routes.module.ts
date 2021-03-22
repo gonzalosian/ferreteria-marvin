@@ -12,6 +12,7 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
 import { ResenasComponent } from './mantenimientos/resenas/resenas.component';
 import { RubrosComponent } from './mantenimientos/rubros/rubros.component';
 import { ProductoComponent } from './mantenimientos/productos/producto.component';
+import { ResenaComponent } from './mantenimientos/resenas/resena.component';
 
 
 const childRoutes: Routes = [
@@ -28,6 +29,7 @@ const childRoutes: Routes = [
     { path: 'proveedores', component: ProveedoresComponent, data: {titulo: 'Mantenimiento de Proveedores'} },
     { path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantenimiento de Usuarios'} },
     { path: 'resenas', component: ResenasComponent, data: {titulo: 'Mantenimiento de Reseñas'} },
+    { path: 'resena/:id', component: ResenaComponent, data: {titulo: 'Mantenimiento de Reseña'} },
     { path: 'rubros', component: RubrosComponent, data: {titulo: 'Mantenimiento de Rubros'} },
 
 ];

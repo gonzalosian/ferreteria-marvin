@@ -1,1 +1,120 @@
-<p>resenas works!</p>
+<div class="row animate fadeIn fast " >
+    <div class="col-12" >
+        <div class="card" >
+            <div class="card-body" >
+
+                <input type="text"
+                        class="form-control"
+                        placeholder="Buscar reseñas..."
+                        (keyup)="buscar(txtTermino.value)"
+                        #txtTermino >
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row animate fadeIn fast" *ngIf="cargando" >
+    <div class="col-12" >
+
+        <div class="alert alert-info text-center ">
+          <h4 class="alert-heading"> Cargando </h4>
+          <i class="fa fa-spin fa-refresh fa-2x " ></i>
+          <p class="mb-0"> Por favor espere </p>
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="row" *ngIf="!cargando" >
+    <div class="col-12">
+        <div class="card">
+
+            <div class="card-body">
+
+                <div class="row" >
+                    <div class="col-8" >
+                        <h4 class="card-title"> Resenas ({{ totalResenas }}) - {{desde}} </h4>
+                        <h6 class="card-subtitle"> Resenas registradas en la aplicación </h6>
+                    </div>
+
+                    <div class="col" >
+                        <div class=" text-right " >
+                            <a class=" btn btn-primary " 
+                                routerLink="/dashboard/resena/nuevo" > 
+                                <i class=" fa fa-hospital-o " ></i> Crear resena 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table table-striped">
+
+                        <thead>
+                            <tr>
+                                <th class="w100" >Foto</th>
+                                <th>Nombre</th>
+                                <th>Estrellas</th>
+                                <th class=" w100 text-nowrap">Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let resena of resenas" >
+
+                                <td class="text-center" >
+                                    <img [src]=" resena.img | imagen:'resenas' " 
+                                        [alt]="resena.nombre"
+                                        class="w100 avatar cursor"
+                                        (click)="abrirModal(resena)" >
+                                </td>
+
+                                <td> {{ resena.nombre }} </td>
+
+                                <td> 
+                                    {{ resena.cantidadEstrellas }} 
+                                    <!-- <span *ngFor="let item of items"  class="mdi mdi-star"></span> -->
+                                </td>
+                                
+                                <td class="text-nowrap text-center ">
+                                    <a [routerLink]=" ['/dashboard/resena', resena._id] "
+                                        class="cursor" 
+                                        data-toggle="tooltip" 
+                                        data-original-title="Editar"> 
+                                        <!-- <i class="fa fa-pencil text-inverse m-r-10"></i>  -->
+                                        <span class="badge bg-primary">Editar</span>
+                                    </a>
+                                    &nbsp;
+                                    <a class="cursor" 
+                                        data-toggle="tooltip" 
+                                        data-original-title="Borrar"
+                                        (click)="eliminarResena(resena)" > 
+                                        <!-- <i class="fa fa-close text-danger"></i>  -->
+                                        <span class="badge bg-danger">Borrar</span>
+                                    </a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- <button class="btn btn-secondary" > Anteriores </button>
+                &nbsp;
+                <button class="btn btn-secondary" > Siguiente </button> -->
+
+                <div *ngIf="txtTermino.length !== 0" >
+                    <button (click)="cambiarPagina(-4)" class="btn btn-secondary" > Anteriores </button>
+                    &nbsp;
+                    <button (click)="cambiarPagina(4)" class="btn btn-secondary" > Siguiente </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
