@@ -35,18 +35,18 @@
         </div>
     </div>
 
-    <!-- <div class="col-4" >
+    <div class="col-4" >
         <div class="card" >
             <div class="card-body" >
-                <h3>Hospitales</h3>
+                <h3>Rubros</h3>
 
                 <div class="alert alert-info animated fadeIn fast"
-                     *ngIf="hospitales.length === 0" >
-                  <p class="mb-0"> No hay hospitales con ese término </p>
+                     *ngIf="rubros.length === 0" >
+                  <p class="mb-0"> No hay rubros con ese término </p>
                 </div>
 
                 <div class="table-responsive"
-                     *ngIf="hospitales.length > 0">
+                     *ngIf="rubros.length > 0">
                     <table class="table">
                         <thead>
                             <tr>
@@ -55,12 +55,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let hospital of hospitales"
+                            <tr *ngFor="let rubro of rubros"
                                 class=" animated fadeIn fast " >
                                 <td>
-                                    <img [src]="hospital.img | imagen:'hospitales'" class="w50" >
+                                    <img [src]="rubro.img | imagen:'rubros'" class="w50" >
                                 </td>
-                                <td> {{ hospital.nombre }} </td>
+                                <td> {{ rubro.nombre }} </td>
                             </tr>
                         </tbody>
                     </table>
@@ -73,15 +73,15 @@
     <div class="col-4" >
         <div class="card" >
             <div class="card-body" >
-                <h3>Médicos</h3>
+                <h3>Productos</h3>
 
                 <div class="alert alert-info animated fadeIn fast"
-                     *ngIf="medicos.length === 0" >
-                  <p class="mb-0"> No hay médicos con ese término </p>
+                     *ngIf="productos.length === 0" >
+                  <p class="mb-0"> No hay productos con ese término </p>
                 </div>
 
                 <div class="table-responsive"
-                     *ngIf="medicos.length > 0">
+                     *ngIf="productos.length > 0">
                     <table class="table">
                         <thead>
                             <tr>
@@ -90,13 +90,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let medico of medicos"
+                            <tr *ngFor="let producto of productos"
                                 class=" animated fadeIn fast cursor"
-                                (click)="abrirMedico(medico)" >
+                                (click)="abrirProducto(producto)" >
                                 <td>
-                                    <img [src]="medico.img | imagen:'medicos'" class="w50" >
+                                    <img [src]="producto.img | imagen:'productos'" class="w50" >
                                 </td>
-                                <td> {{ medico.nombre }} </td>
+                                <td> {{ producto.nombre }} </td>
                             </tr>
                         </tbody>
                     </table>
@@ -106,7 +106,7 @@
         </div>
     </div>
 
-    <div class="col-4" >
+    <!-- <div class="col-4" >
         <div class="card" >
             <div class="card-body" >
                 <h3>Noticias</h3>

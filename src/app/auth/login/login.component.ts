@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+
 import Swal from 'sweetalert2';
 
 import { UsuarioService } from '../../services/usuario.service';

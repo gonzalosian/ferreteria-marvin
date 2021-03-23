@@ -4,8 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BusquedasService } from '../../services/busquedas.service';
 
 import { Usuario } from '../../models/usuario.model';
-// import { Medico } from '../../models/medico.model';
-// import { Hospital } from '../../models/hospital.model';
+import { Producto } from '../../models/producto.model';
+import { Rubro } from '../../models/rubro.model';
 // import { Noticia } from '../../models/noticia.model';
 
 @Component({
@@ -17,8 +17,8 @@ import { Usuario } from '../../models/usuario.model';
 export class BusquedaComponent implements OnInit {
 
   public usuarios: Usuario[] = [];
-  // public medicos: Medico[] = [];
-  // public hospitales: Hospital[] = [];
+  public productos: Producto[] = [];
+  public rubros: Rubro[] = [];
   // public noticias: Noticia[] = [];
   
   constructor( private activatedRoute: ActivatedRoute,
@@ -41,15 +41,15 @@ export class BusquedaComponent implements OnInit {
       .subscribe( (resp: any) => {
         // console.log(resp);
         this.usuarios = resp.usuarios;
-        // this.medicos = resp.medicos;
-        // this.hospitales = resp.hospitales;
+        this.productos = resp.productos;
+        this.rubros = resp.rubros;
         // this.noticias = resp.noticias;
       } )
   }
 
-  // abrirMedico(medico: Medico){
-  //   // console.log(medico);
-  //   this.router.navigateByUrl(`/dashboard/medico/${medico._id}`);
-  // }
+  abrirProducto(producto: Producto){
+    // console.log(producto);
+    this.router.navigateByUrl(`/dashboard/producto/${producto._id}`);
+  }
 
 }
