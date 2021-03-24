@@ -13,6 +13,7 @@ import { ResenasComponent } from './mantenimientos/resenas/resenas.component';
 import { RubrosComponent } from './mantenimientos/rubros/rubros.component';
 import { ProductoComponent } from './mantenimientos/productos/producto.component';
 import { ResenaComponent } from './mantenimientos/resenas/resena.component';
+import { AdminGuard } from '../guards/admin.guard';
 
 
 const childRoutes: Routes = [
@@ -27,10 +28,10 @@ const childRoutes: Routes = [
     { path: 'productos', component: ProductosComponent, data: {titulo: 'Mantenimiento de Productos'} },
     { path: 'producto/:id', component: ProductoComponent, data: { titulo: 'Mantenimiento de Producto' } },
     { path: 'proveedores', component: ProveedoresComponent, data: {titulo: 'Mantenimiento de Proveedores'} },
-    { path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantenimiento de Usuarios'} },
     { path: 'resenas', component: ResenasComponent, data: {titulo: 'Mantenimiento de Reseñas'} },
     { path: 'resena/:id', component: ResenaComponent, data: {titulo: 'Mantenimiento de Reseña'} },
     { path: 'rubros', component: RubrosComponent, data: {titulo: 'Mantenimiento de Rubros'} },
+    { path: 'usuarios', canActivate: [ AdminGuard ], component: UsuariosComponent, data: {titulo: 'Mantenimiento de Usuarios'} },
 
 ];
 

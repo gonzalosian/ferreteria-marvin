@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../services/sidebar.service';
+
+declare function customInitFunctions();
 
 @Component({
   selector: 'app-pages',
@@ -8,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+  constructor( private sidebarService: SidebarService ) { }
 
   ngOnInit(): void {
+
+    customInitFunctions();
+    this.sidebarService.cargarMenu();
   }
 
 }
