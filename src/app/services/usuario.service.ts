@@ -68,8 +68,7 @@ export class UsuarioService {
       gapi.load('auth2', () => {
         // Retrieve the singleton for the GoogleAuth library and set up the client.
         this.auth2 = gapi.auth2.init({
-          // client_id: '226900357334-4a1lrjdjqp20h6smrvt2butb3j4q10h2.apps.googleusercontent.com',
-          client_id: '226900357334-8csnt0thhuu0d62ott2bivsgu896vg00.apps.googleusercontent.com',
+          client_id: '375863296952-lpos8apm28jtoaablk19re7iscasn8ct.apps.googleusercontent.com',
           cookiepolicy: 'single_host_origin',
         });
         // El resolve lo llamamos una vez inicializado todo el código
