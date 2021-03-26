@@ -111,7 +111,9 @@ export class UsuarioService {
     return this.http.get(`${base_url}/login/renew`, this.header).pipe(
         // esto siempre devolverá un observable
         map( (resp: any) => {
-          // console.log(resp);
+          
+          console.log(`resp desde validarToken : ${resp} `);
+
           const { email, google, img = '', nombre, role, uid } = resp.usuario;
           this.usuario = new Usuario( nombre, email, '', img, google, role, uid );
           // this.usuario.imprimirUsuario();
