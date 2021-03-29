@@ -175,6 +175,8 @@ export class UsuarioService {
                         tap( (resp: any) => {
                           // localStorage.setItem('token', resp.token);
                           // localStorage.setItem('menu', resp.menu);
+                          console.log(`resp desde loginGoogle() front: ${resp} `);
+                          
                           this.guardarLocalStorage( resp.token, resp.menu );
                         } )
                       );

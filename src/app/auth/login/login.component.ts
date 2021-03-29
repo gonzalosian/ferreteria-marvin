@@ -100,10 +100,12 @@ export class LoginComponent implements OnInit {
         (googleUser) => {
           const id_token = googleUser.getAuthResponse().id_token;
 
-          console.log( `id_token: ${id_token} ` );
+          console.log( `id_token de attachSignin(): ${id_token} ` );
 
           this.usuarioService.loginGoogle( id_token )
             .subscribe( resp => {
+
+              console.log(`resp de attachSignin(): ${resp}`);
 
               this.ngZone.run( () => {
                 // Angular pierde el control del ciclo de vida y por eso advierte/recomienda el uso del NgZone,
